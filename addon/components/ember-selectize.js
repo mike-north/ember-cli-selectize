@@ -185,8 +185,9 @@ export default Ember.Component.extend({
     this._selectionWillChange();
 
     //Invoke Selectize's destroy
-    this._selectize.destroy();
-
+    if (this._selectize) {
+      this._selectize.destroy();
+    }
     //We are no longer in DOM
     this._selectize = null;
   },
