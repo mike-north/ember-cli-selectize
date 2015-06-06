@@ -155,6 +155,7 @@ export default Ember.Component.extend({
   }),
 
   didInsertElement: function() {
+    this._super(...arguments);
     // ensure selectize is loaded
     Ember.assert('selectize has to be loaded', typeof this.$().selectize === 'function');
 
@@ -178,6 +179,7 @@ export default Ember.Component.extend({
   },
 
   willDestroyElement: function() {
+    this._super(...arguments);
     //Unbind observers
     this._contentWillChange();
     this._selectionWillChange();
